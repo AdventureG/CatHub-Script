@@ -1,0 +1,58 @@
+local b = Instance.new("BindableFunction")
+function b.OnInvoke(response) if response == "Copy Link" then if setclipboard then setclipboard("discord.gg/kq7cJfEvFS") end end end
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Join discord server", Text = "Official CatHub Server, Join for more updates!", Duration = 8, Callback = b, Button1 = "Copy Link"})
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("CatHub BETA", "Ocean")
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Main")
+local Tab2 = Window:NewTab("Message")
+local Section2 = Tab2:NewSection("MessageBot")
+local Tab3 = Window:NewTab("Credits")
+local Section3 = Tab3:NewSection("Discord Username")
+
+
+Section:NewButton("GodMode", "Godmode so you can't die from anything unless the void", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/MSZAznxp", true))()
+end)
+Section:NewButton("ControlTP", "Ctrl+LeftClick = Teleport", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/rS2DBx4Y", true))()
+end)
+Section:NewButton("Give All TOOLS", "Detectable", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/ngVWmQ8m", true))()
+end)
+Section:NewButton("Instant Win", "Yeah! Finish", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.tower.sections.finish.exit.ParticleBrick.CFrame
+end)
+Section:NewButton("Inf Jump", "Infinitely Jumps when holding spacebar", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/WUquqYN0", true))()
+end) 
+Section:NewSlider("WalkSpeed", "SliderInfo", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+Section:NewSlider("JumpPower", "SliderInfo", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+Section:NewButton("AntiKick", "Use this", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/BMGbkQ71", true))()
+end)
+Section:NewButton("Noclip (B)", "Noclip ok", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/Czgaerid", true))()
+end)
+Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+Section2:NewButton("CatHub Bot Messages", "Advertise CatHub to other people", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/SiHSya3a", true))()
+end)
+Section3:NewButton("Credits: Hello1 #9095", "My Discord", function()
+    print("Okay")
+end)
+
+-- Game Functions --
+if getconnections then
+    for i,v in pairs(getconnections(game:GetService("ScriptContext").Error)) do
+      v:Disable()
+    end
+  end
